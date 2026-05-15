@@ -15,6 +15,8 @@ export default function Home() {
   const [carrierName, setCarrierName] = useState('')
   const [carrierPhone, setCarrierPhone] = useState('')
   const [senderName, setSenderName] = useState('Mahmut')
+const [departureDate, setDepartureDate] = useState('')
+const [departureTime, setDepartureTime] = useState('')
   const [items, setItems] = useState<Item[]>([
     { product_name: '', quantity: 0, unit: 'kg', unit_price: 0, total_price: 0 },
   ])
@@ -82,6 +84,8 @@ export default function Home() {
         payment_status: 'odenmedi',
         total_amount: totalAmount,
       })
+departure_date: departureDate,
+departure_time: departureTime,
       .select()
       .single()
 
@@ -123,6 +127,19 @@ export default function Home() {
           <input className="rounded border p-3" placeholder="Taşıyıcı telefon" value={carrierPhone} onChange={e => setCarrierPhone(e.target.value)} />
           <input className="rounded border p-3" placeholder="Teslim eden" value={senderName} onChange={e => setSenderName(e.target.value)} />
           <input className="rounded border p-3 bg-gray-100" value="Azez → Kilis" disabled />
+<input
+  type="date"
+  className="rounded border p-3"
+  value={departureDate}
+  onChange={e => setDepartureDate(e.target.value)}
+/>
+
+<input
+  type="time"
+  className="rounded border p-3"
+  value={departureTime}
+  onChange={e => setDepartureTime(e.target.value)}
+/>
         </div>
 
         <h2 className="mt-8 mb-4 text-xl font-semibold">Ürünler</h2>
