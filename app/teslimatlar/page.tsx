@@ -9,6 +9,12 @@ type Shipment = {
   total_amount: number
   status: string
   payment_status: string
+
+  departure_date: string
+  departure_time: string
+  delivery_date: string
+  delivery_time: string
+
   carriers: {
     full_name: string
     phone: string
@@ -32,6 +38,22 @@ export default function TeslimatlarPage() {
   }, [])
 
   const markDelivered = async (id: number) => {
+  const now = new Date()
+
+  const deliveryDate = now.toISOString().split('T')[0]
+  const deliveryTime = now.toTimeString().split(' ')[0]
+
+  await supabase
+    .from('shipments')
+    .update({
+      status: 'teslim_alindi',
+      delivery_date: deliveryDate,
+      delivery_time: deliveryTime,
+    })
+    .eq('id', id)
+
+  fetchShipments()
+}
     await supabase.from('shipments').update({ status: 'teslim_alindi' }).eq('id', id)
     fetchShipments()
   }
@@ -53,6 +75,8 @@ export default function TeslimatlarPage() {
               <th className="p-3">Taşıyıcı</th>
               <th className="p-3">Telefon</th>
               <th className="p-3">Toplam</th>
+<th className="p-3">Çıkış</th>
+<th className="p-3">Teslim</th>
               <th className="p-3">Teslim</th>
               <th className="p-3">Ödeme</th>
               <th className="p-3">İşlem</th>
@@ -66,6 +90,13 @@ export default function TeslimatlarPage() {
                 <td className="p-3">{shipment.carriers?.full_name}</td>
                 <td className="p-3">{shipment.carriers?.phone}</td>
                 <td className="p-3">{shipment.total_amount} TL</td>
+<td className="p-3">
+  {shipment.departure_date || '-'} {shipment.departure_time || ''}
+</td>
+
+<td className="p-3">
+  {shipment.delivery_date || '-'} {shipment.delivery_time || ''}
+</td>
                 <td className="p-3">{shipment.status}</td>
                 <td className="p-3">{shipment.payment_status}</td>
 
