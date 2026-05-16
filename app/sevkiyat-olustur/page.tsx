@@ -73,11 +73,15 @@ export default function Home() {
       alert('Çıkış tarihi ve saati zorunlu')
       return
     }
+const validItems = items.filter(
+  item => item.product_name && item.quantity > 0 && item.unit_price > 0
+)
 
-    if (items.some(item => !item.product_name || item.quantity <= 0 || item.unit_price <= 0)) {
-      alert('Ürün adı, miktar ve fiyat eksiksiz olmalı')
-      return
-    }
+if (validItems.length === 0) {
+  alert('En az bir ürün eksiksiz girilmeli')
+  return
+}
+    
 
     const receiptNo = createReceiptNo()
 
@@ -116,7 +120,7 @@ export default function Home() {
       return
     }
 
-    const shipmentItems = items.map(item => ({
+    const shipmentItems = validItems.map(item => ({
       shipment_id: shipment.id,
       product_name: item.product_name,
       quantity: item.quantity,
