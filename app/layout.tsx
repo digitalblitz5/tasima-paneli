@@ -1,3 +1,5 @@
+'use client'
+import { supabase } from '../lib/supabase'
 import type { Metadata } from 'next'
 import './globals.css'
 
@@ -36,7 +38,15 @@ export default function RootLayout({
               Cari
             </a>
 
-            <a href="/login" className="ml-auto rounded bg-gray-700 px-3 py-2 hover:bg-gray-600">
+            <button
+  onClick={async () => {
+    await supabase.auth.signOut()
+    window.location.href = '/login'
+  }}
+  className="ml-auto rounded bg-red-600 px-3 py-2 text-white hover:bg-red-700"
+>
+  Çıkış Yap
+</button>
               Giriş
             </a>
           </div>
