@@ -63,3 +63,38 @@ tbody tr {
 .shadow-xl {
   box-shadow: 0 10px 30px rgba(0,0,0,0.35) !important;
 }
+/* Okunabilirlik düzeltmeleri */
+.bg-yellow-100 {
+  background-color: #facc15 !important;
+  color: #111827 !important;
+}
+
+.bg-yellow-100 * {
+  color: #111827 !important;
+}
+
+.bg-gray-200 {
+  background-color: #374151 !important;
+  color: #ffffff !important;
+}
+
+.bg-gray-100 {
+  background-color: #111827 !important;
+  color: #ffffff !important;
+}
+
+.text-gray-600,
+.text-gray-500 {
+  color: #d1d5db !important;
+}
+
+td,
+th,
+p,
+span,
+label,
+h1,
+h2,
+h3 {
+  color: inherit;
+}
