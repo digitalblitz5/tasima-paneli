@@ -83,7 +83,7 @@ export default function CariPage() {
 
   return (
     <main className="min-h-screen bg-gray-100 p-6">
-      <div className="mx-auto max-w-7xl rounded-2xl bg-white p-6 shadow">
+      <div className="mx-auto max-w-7xl rounded-2xl bg-[#161a20] p-6 shadow">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
           <h1 className="text-3xl font-bold">Taşıyıcı Cari Hesapları</h1>
 

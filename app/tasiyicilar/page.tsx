@@ -41,7 +41,7 @@ export default function TasiyicilarPage() {
 
   return (
     <main className="min-h-screen bg-gray-100 p-6">
-      <div className="mx-auto max-w-7xl rounded-2xl bg-white p-6 shadow">
+      <div className="mx-auto max-w-7xl rounded-2xl bg-[#161a20] p-6 shadow">
         <h1 className="mb-6 text-3xl font-bold">Taşıyıcılar</h1>
 
         <table className="w-full border-collapse">

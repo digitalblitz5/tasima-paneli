@@ -49,39 +49,39 @@ export default function DashboardPage() {
         <h1 className="mb-6 text-3xl font-bold">Kontrol Paneli</h1>
 
         <div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-3 xl:grid-cols-6">
-          <div className="rounded-2xl bg-white p-5 shadow">
+          <div className="rounded-2xl bg-[#161a20] p-5 shadow">
             <p>Bugünkü Sevkiyat</p>
             <p className="text-3xl font-bold">{todayShipments.length}</p>
           </div>
 
-          <div className="rounded-2xl bg-white p-5 shadow">
+          <div className="rounded-2xl bg-[#161a20] p-5 shadow">
             <p>Yolda / Bekleyen</p>
             <p className="text-3xl font-bold">{waitingShipments.length}</p>
           </div>
 
-          <div className="rounded-2xl bg-white p-5 shadow">
+          <div className="rounded-2xl bg-[#161a20] p-5 shadow">
             <p>Eksik Teslim</p>
             <p className="text-3xl font-bold text-red-700">{missingShipments.length}</p>
           </div>
 
-          <div className="rounded-2xl bg-white p-5 shadow">
+          <div className="rounded-2xl bg-[#161a20] p-5 shadow">
             <p>Hasarlı Teslim</p>
             <p className="text-3xl font-bold text-orange-700">{damagedShipments.length}</p>
           </div>
 
-          <div className="rounded-2xl bg-white p-5 shadow">
+          <div className="rounded-2xl bg-[#161a20] p-5 shadow">
             <p>Açık Cari</p>
             <p className="text-3xl font-bold text-red-700">{openBalance} TL</p>
           </div>
 
-          <div className="rounded-2xl bg-white p-5 shadow">
+          <div className="rounded-2xl bg-[#161a20] p-5 shadow">
             <p>Bugünkü Ödeme</p>
             <p className="text-3xl font-bold text-green-700">{todayPayments} TL</p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
-          <div className="rounded-2xl bg-white p-6 shadow">
+          <div className="rounded-2xl bg-[#161a20] p-6 shadow">
             <h2 className="mb-4 text-xl font-bold">Son Sevkiyatlar</h2>
 
             <table className="w-full border-collapse">
@@ -109,7 +109,7 @@ export default function DashboardPage() {
             </table>
           </div>
 
-          <div className="rounded-2xl bg-white p-6 shadow">
+          <div className="rounded-2xl bg-[#161a20] p-6 shadow">
             <h2 className="mb-4 text-xl font-bold">Ödeme Bekleyenler</h2>
 
             <table className="w-full border-collapse">

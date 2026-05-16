@@ -148,7 +148,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-100 p-6">
-      <div className="mx-auto max-w-5xl rounded-2xl bg-white p-6 shadow">
+      <div className="mx-auto max-w-5xl rounded-2xl bg-[#161a20] p-6 shadow">
         <h1 className="mb-6 text-2xl font-bold">Yeni Sevkiyat Oluştur</h1>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">

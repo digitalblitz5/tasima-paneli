@@ -9,7 +9,7 @@ export default function Navbar() {
 
         <a
           href="/dashboard"
-          className="rounded bg-white px-3 py-2 font-bold text-black"
+          className="rounded bg-[#161a20] px-3 py-2 font-bold text-white"
         >
           Panel
         </a>

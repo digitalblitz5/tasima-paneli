@@ -86,7 +86,7 @@ export default function OdemePage() {
 
   return (
     <main className="min-h-screen bg-gray-100 p-6">
-      <div className="mx-auto max-w-5xl rounded-2xl bg-white p-6 shadow">
+      <div className="mx-auto max-w-5xl rounded-2xl bg-[#161a20] p-6 shadow">
         <h1 className="mb-2 text-3xl font-bold">Ödeme Yap</h1>
         <p className="mb-6 text-gray-600">
           Makbuz: <b>{shipment.receipt_no}</b> — Taşıyıcı: <b>{shipment.carriers?.full_name}</b>

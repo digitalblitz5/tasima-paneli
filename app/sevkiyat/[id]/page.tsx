@@ -48,8 +48,8 @@ export default function SevkiyatDetayPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-100 p-6 print:bg-white">
-      <div className="mx-auto max-w-6xl rounded-2xl bg-white p-6 shadow print:shadow-none">
+    <main className="min-h-screen bg-gray-100 p-6 print:bg-[#161a20]">
+      <div className="mx-auto max-w-6xl rounded-2xl bg-[#161a20] p-6 shadow print:shadow-none">
         <div className="mb-6 flex items-start justify-between">
           <div>
             <h1 className="text-3xl font-bold">Sevkiyat Detayı</h1>

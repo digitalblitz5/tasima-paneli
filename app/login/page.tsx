@@ -54,7 +54,7 @@ export default function LoginPage() {
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow">
+      <div className="w-full max-w-md rounded-2xl bg-[#161a20] p-8 shadow">
         <h1 className="mb-6 text-3xl font-bold">
           Giriş Yap
         </h1>
