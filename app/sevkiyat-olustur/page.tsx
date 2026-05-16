@@ -8,7 +8,10 @@ type Item = {
   quantity: number
   unit: string
   unit_price: number
+  cost_unit_price: number
   total_price: number
+  cost_total_price: number
+  profit_total: number
 }
 
 export default function Home() {
@@ -22,7 +25,16 @@ export default function Home() {
   const [departureTime, setDepartureTime] = useState(nowTime)
 
   const [items, setItems] = useState<Item[]>([
-    { product_name: '', quantity: 0, unit: 'kg', unit_price: 0, total_price: 0 },
+    {
+  product_name: '',
+  quantity: 0,
+  unit: 'kg',
+  unit_price: 0,
+  cost_unit_price: 0,
+  total_price: 0,
+  cost_total_price: 0,
+  profit_total: 0,
+},
   ])
 
   const totalAmount = items.reduce((sum, item) => sum + item.total_price, 0)
@@ -38,6 +50,11 @@ export default function Home() {
   }
 
   item.total_price = Number(item.quantity || 0) * Number(item.unit_price || 0)
+item.cost_total_price =
+  Number(item.quantity || 0) * Number(item.cost_unit_price || 0)
+
+item.profit_total =
+  Number(item.total_price || 0) - Number(item.cost_total_price || 0)
 
   newItems[index] = item
   setItems(newItems)
@@ -47,7 +64,16 @@ export default function Home() {
   const addItem = () => {
     setItems([
       ...items,
-      { product_name: '', quantity: 0, unit: 'kg', unit_price: 0, total_price: 0 },
+      {
+  product_name: '',
+  quantity: 0,
+  unit: 'kg',
+  unit_price: 0,
+  cost_unit_price: 0,
+  total_price: 0,
+  cost_total_price: 0,
+  profit_total: 0,
+},
     ])
   }
 
@@ -127,6 +153,9 @@ if (validItems.length === 0) {
       unit: item.unit,
       unit_price: item.unit_price,
       total_price: item.total_price,
+cost_unit_price: item.cost_unit_price,
+cost_total_price: item.cost_total_price,
+profit_total: item.profit_total,
       received_quantity: 0,
       item_status: 'bekliyor',
     }))
@@ -146,7 +175,16 @@ if (validItems.length === 0) {
     setCarrierName('')
     setCarrierPhone('')
     setItems([
-      { product_name: '', quantity: 0, unit: 'kg', unit_price: 0, total_price: 0 },
+      {
+  product_name: '',
+  quantity: 0,
+  unit: 'kg',
+  unit_price: 0,
+  cost_unit_price: 0,
+  total_price: 0,
+  cost_total_price: 0,
+  profit_total: 0,
+},
     ])
   }
 
@@ -175,7 +213,7 @@ if (validItems.length === 0) {
         <h2 className="mt-8 mb-4 text-xl font-semibold">Ürünler</h2>
 
         {items.map((item, index) => (
-          <div key={index} className="mb-4 grid grid-cols-1 gap-3 rounded-xl border p-4 md:grid-cols-6">
+          <div key={index} className="mb-4 grid grid-cols-1 gap-3 rounded-xl border p-4 md:grid-cols-7">
             <input className="rounded border p-3 md:col-span-2" placeholder="Ürün adı" value={item.product_name} onChange={e => updateItem(index, 'product_name', e.target.value)} />
             <input className="rounded border p-3" type="number" placeholder="Miktar" value={item.quantity} onChange={e => updateItem(index, 'quantity', e.target.value)} />
             <select className="rounded border p-3" value={item.unit} onChange={e => updateItem(index, 'unit', e.target.value)}>
@@ -184,7 +222,14 @@ if (validItems.length === 0) {
               <option value="takım">takım</option>
               <option value="koli">koli</option>
             </select>
-            <input className="rounded border p-3" type="number" placeholder="Birim fiyat" value={item.unit_price} onChange={e => updateItem(index, 'unit_price', e.target.value)} />
+            <input className="rounded border p-3" type="number" placeholder="Birim fiyat" value={item.unit_price} onChange={e => updateItem
+<input
+  className="rounded border p-3"
+  type="number"
+  placeholder="Alış fiyatı"
+  value={item.cost_unit_price}
+  onChange={e => updateItem(index, 'cost_unit_price', e.target.value)}
+/>(index, 'unit_price', e.target.value)} />
 
             <div className="flex items-center justify-between rounded bg-gray-100 p-3">
               <span>{item.total_price} TL</span>
