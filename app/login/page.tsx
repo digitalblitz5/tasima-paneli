@@ -36,7 +36,7 @@ export default function LoginPage() {
     }
 
     if (profile.role === 'azez') {
-      router.push('/')
+      router.push('/sevkiyat-olustur')
     }
 
     if (profile.role === 'kilis') {
